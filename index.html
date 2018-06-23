@@ -1,0 +1,37 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>JNot</title>
+
+        <script>
+            function notify()
+            {
+                if ("Notification" in window) {
+                  Notification.requestPermission(function (permission) {
+                    // If the user accepts, let’s create a notification
+                    if (permission === "granted") {
+                      var notification = new Notification("My Notification", {
+                           tag: "notification1", 
+                           body: "First Line\nSecond Line" 
+                      }); 
+                      notification.onshow  = function() { console.log('show'); };
+                      notification.onclose = function() { console.log('close'); };
+                      notification.onclick = function() { console.log('click'); };
+                    }
+                  });
+                }            
+            }
+            document.addEventListener("deviceready", 
+                function(){
+                }, 
+            false);
+        </script>
+
+    </head>
+
+    <body>
+        <button onclick="notify()">Push Notification</button>
+    </body>
+
+</html>
