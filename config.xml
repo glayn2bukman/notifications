@@ -29,6 +29,7 @@
 
     <plugin name="cordova-plugin-whitelist" />
     <plugin name="phonegap-plugin-local-notification" />
+    <plugin name="cordova-plugin-local-notification" />
 
 
 </widget>
